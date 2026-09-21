@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentropolis.dev/forge/promotion-decision.v1.json",
+  "title": "FORGE Promotion Decision",
+  "description": "FORGE's governed promotion decision over BE evaluation + Proof Graph evidence + current state. A PromotionDecision is NOT execution and NOT an authority grant; authority changes require their own governed AuthorityPromotionReceipt path.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision_id",
+    "agent_entity_ref",
+    "capability",
+    "old_tier",
+    "requested_tier",
+    "approved_tier",
+    "decision",
+    "be_evaluation_ref",
+    "proof_refs",
+    "policy_version",
+    "risk_tier",
+    "timestamp",
+    "digest"
+  ],
+  "properties": {
+    "decision_id": { "type": "string", "minLength": 1 },
+    "agent_entity_ref": { "type": "string", "minLength": 1 },
+    "capability": { "type": "string", "minLength": 1 },
+    "old_tier": { "type": "string", "minLength": 1 },
+    "requested_tier": { "type": "string", "minLength": 1 },
+    "approved_tier": { "type": ["string", "null"] },
+    "decision": {
+      "enum": ["PROMOTE", "RESTRICT", "REVOKE", "RETAIN", "REQUIRE_RETEST", "ESCALATE"]
+    },
+    "be_evaluation_ref": { "type": "string", "minLength": 1 },
+    "proof_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "policy_version": { "type": "string", "minLength": 1 },
+    "risk_tier": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "digest": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "grants_authority": { "const": false }
+  }
+}

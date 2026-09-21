@@ -8,7 +8,9 @@ CAPABILITY DECLARED
   -> AQUADUCT test execution
   -> verification + receipts
   -> Proof Graph
-  -> Forge certification
+  -> BE evaluation
+  -> Forge certification / promotion
+  -> 54-T governance / security review
   -> human / AEGIS promotion
   -> PAYRAIL production eligibility
 ```

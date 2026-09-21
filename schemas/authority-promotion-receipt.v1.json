@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentropolis.dev/forge/authority-promotion-receipt.v1.json",
+  "title": "Authority Promotion Receipt",
+  "description": "A distinct receipt emitted ONLY when an authority change is eventually approved through the governed authority process. Never hide authority growth inside a capability receipt. No self-approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "promotion_id",
+    "agent_entity_ref",
+    "previous_authority",
+    "new_authority",
+    "mandate_ref",
+    "aegis_decision_ref",
+    "be_evaluation_ref",
+    "forge_decision_ref",
+    "governance_review_ref",
+    "proof_refs",
+    "policy_version",
+    "effective_at",
+    "expires_at",
+    "approved_by",
+    "digest"
+  ],
+  "properties": {
+    "promotion_id": { "type": "string", "minLength": 1 },
+    "agent_entity_ref": { "type": "string", "minLength": 1 },
+    "previous_authority": { "type": "string", "minLength": 1 },
+    "new_authority": { "type": "string", "minLength": 1 },
+    "mandate_ref": { "type": "string", "minLength": 1 },
+    "aegis_decision_ref": { "type": "string", "minLength": 1 },
+    "be_evaluation_ref": { "type": "string", "minLength": 1 },
+    "forge_decision_ref": { "type": "string", "minLength": 1 },
+    "governance_review_ref": { "type": "string", "minLength": 1 },
+    "proof_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "policy_version": { "type": "string", "minLength": 1 },
+    "effective_at": { "type": "string", "format": "date-time" },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "approved_by": { "type": "string", "minLength": 1 },
+    "digest": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" }
+  }
+}

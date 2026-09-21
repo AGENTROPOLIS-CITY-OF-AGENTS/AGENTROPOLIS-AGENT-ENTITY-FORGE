@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentropolis.dev/forge/be-evaluation-receipt.v1.json",
+  "title": "BE Evaluation Receipt",
+  "description": "BE evaluation of Proof Graph evidence. A recommendation is evidence, not authority. BE cannot directly increase budget, signing authority, asset/counterparty scope, delegation depth, transaction ceiling, or production access.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evaluation_id",
+    "agent_entity_ref",
+    "requested_capability",
+    "requested_authority_change",
+    "proof_refs",
+    "policy_refs",
+    "evaluation_version",
+    "evaluator_ref",
+    "confidence",
+    "evidence_completeness",
+    "contradictions",
+    "expired_evidence",
+    "missing_evidence",
+    "risk_tier",
+    "recommendation",
+    "timestamp",
+    "digest"
+  ],
+  "properties": {
+    "evaluation_id": { "type": "string", "minLength": 1 },
+    "agent_entity_ref": { "type": "string", "minLength": 1 },
+    "requested_capability": { "type": "string", "minLength": 1 },
+    "requested_authority_change": { "type": ["string", "null"] },
+    "proof_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "policy_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evaluation_version": { "type": "string", "minLength": 1 },
+    "evaluator_ref": { "type": "string", "minLength": 1 },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "evidence_completeness": { "type": "number", "minimum": 0, "maximum": 1 },
+    "contradictions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "expired_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risk_tier": { "type": "string", "minLength": 1 },
+    "recommendation": {
+      "enum": ["QUALIFIED", "NOT_QUALIFIED", "NEEDS_REVIEW"]
+    },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "digest": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "grants_authority": { "const": false }
+  }
+}

@@ -1,16 +1,22 @@
 # AGENTROPOLIS AGENT-ENTITY FORGE
 
-**Institutional provisioning, proof graphs, certification, promotion, restriction, revocation and smart-contract interoperability for persistent AGENTENTITY actors.**
+**Institutional provisioning, proof graphs, certification, promotion, restriction, revocation and smart-contract interoperability for persistent AGENT-ENTITY actors.**
 
 > **Provision. Constrain. Prove. Promote.**
 
-The Forge is not a wallet, settlement router, agent language, or blockchain. It is the controlled transformation boundary where an AGENTENTITY is provisioned, tested, certified, promoted, restricted, recovered or revoked using verified evidence and approved governance.
+> **Naming:** The canonical name is **AGENT-ENTITY** (hyphenated). Legacy
+> `AGENTENTITY` identifiers in older docs/schemas are compatibility aliases and
+> are being migrated; new human-facing architecture, docs, comments, diagrams,
+> interfaces and schemas use `AGENT-ENTITY`. Do not introduce `AEP` or
+> `Agent Entity Protocol`.
+
+The Forge is not a wallet, settlement router, agent language, or blockchain. It is the controlled transformation boundary where an AGENT-ENTITY is provisioned, tested, certified, promoted, restricted, recovered or revoked using verified evidence and approved governance.
 
 ## Canonical separation
 
 | Component | Role |
 | --- | --- |
-| **AGENTENTITY** | Persistent identity, controller relationships, provenance and state |
+| **AGENT-ENTITY** | Persistent identity, controller relationships, provenance and state |
 | **ATRALITH / ATG** | Canonical AGENTROPOLIS agent language and communication envelope |
 | **FISCALITH** | Chain-neutral financial language carried through ATG |
 | **Mandate** | Principal-issued authority object |
@@ -28,35 +34,39 @@ HUMAN / INSTITUTION
         ↓
      MANDATE
         ↓
-    AGENTENTITY
-        ↓
-   ATRALITH / ATG
-        ↓
-     FISCALITH
-  when financial
-        ↓
- EXECUTION ENVELOPE
-        ↓
-      AEGIS
-        ↓
-     AQUADUCT
- sandbox / certification
-        ↓
- VERIFIED TEST EVIDENCE
-        ↓
-     PROOF GRAPH
-        ↓
-       FORGE
- certification / promotion
-        ↓
- HUMAN / POLICY APPROVAL
-        ↓
-      PAYRAIL
- production execution
-        ↓
-  SETTLEMENT / RESULT
-        ↓
- RECEIPTS + AUDIT
+    AGENT-ENTITY
+            ↓
+       ATRALITH / ATG
+            ↓
+         FISCALITH
+      when financial
+            ↓
+     EXECUTION ENVELOPE
+            ↓
+          AEGIS
+            ↓
+         AQUADUCT
+     sandbox / certification
+            ↓
+     VERIFIED TEST EVIDENCE
+            ↓
+         PROOF GRAPH
+            ↓
+           BE
+     evaluation / evidence-based promotion assessment
+            ↓
+           FORGE
+     certification / promotion
+            ↓
+          54-T
+     governance / security review
+            ↓
+          PAYRAIL
+     production execution
+            ↓
+      SETTLEMENT / RESULT
+            ↓
+          RECEIPTS + AUDIT
 ```
 
 ## Why AQUADUCT is mandatory for promotion-sensitive financial capabilities
@@ -134,7 +144,7 @@ Reputation is a view over evidence, not a single canonical score.
 ## Arc / Circle reference path
 
 ```text
-AGENTENTITY
+AGENT-ENTITY
   ↓
 ATG.REQUEST
   ↓
@@ -171,4 +181,4 @@ The institutional Forge interface uses the AGENTROPOLIS visual system:
 - lime = confirmed verification / settlement / promotion
 - amber = review / expiring / limited authority
 
-The primary Mission Control visualization is a spatial holographic proof graph around the selected AGENTENTITY, with evidence rings, mandate state, authority tier, current risk, settlement status and promotion gates visible at a glance.
+The primary Mission Control visualization is a spatial holographic proof graph around the selected AGENT-ENTITY, with evidence rings, mandate state, authority tier, current risk, settlement status and promotion gates visible at a glance.
