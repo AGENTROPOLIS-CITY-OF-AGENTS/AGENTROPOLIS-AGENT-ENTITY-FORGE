@@ -71,9 +71,11 @@ ERC-8004 validation uses a request / response flow between the agent owner and a
 
 A validation response may contribute to:
 - ProofOfCapability
-- ProofOfCredential
-- ProofOfValidation
-- ProofOfCompliancePredicate
+- ProofOfCompliance
+
+These are the canonical proof classes defined in `docs/PROOF-GRAPH.md`. The
+adapter maps ERC-8004 validation evidence to existing canonical classes; it does
+not introduce non-canonical proof types.
 
 The response proves only the configured validation claim under the identified validator and request commitment.
 
@@ -90,7 +92,11 @@ normalized proof receipts
       ↓
 Proof Graph
       ↓
+BE evaluation
+      ↓
 Forge certification decision
+      ↓
+54-T governance / security review
       ↓
 AEGIS / human approval if authority changes
 ```

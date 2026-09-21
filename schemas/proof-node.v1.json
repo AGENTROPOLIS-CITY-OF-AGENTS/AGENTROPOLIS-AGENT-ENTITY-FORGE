@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentropolis.dev/forge/proof-node.v1.json",
+  "title": "AGENT-ENTITY Forge Proof Graph Node",
+  "description": "A single evidence node in the Proof Graph. Evidence is append-only; corrections use supersedes/revocation, never rewrite. A proof node is evidence, not authority (grants_authority is always false).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proof_id",
+    "proof_type",
+    "subject_ref",
+    "source_ref",
+    "verifier_ref",
+    "timestamp",
+    "digest",
+    "schema_version",
+    "evidence_refs",
+    "status",
+    "provenance"
+  ],
+  "properties": {
+    "proof_id": { "type": "string", "minLength": 1 },
+    "proof_type": { "type": "string", "minLength": 1 },
+    "subject_ref": { "type": "string", "minLength": 1 },
+    "source_ref": { "type": "string", "minLength": 1 },
+    "verifier_ref": { "type": "string", "minLength": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "digest": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "schema_version": { "type": "string", "minLength": 1 },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "status": {
+      "enum": ["ACTIVE", "EXPIRED", "SUPERSEDED", "REVOKED", "DISPUTED"]
+    },
+    "expiry": { "type": ["string", "null"], "format": "date-time" },
+    "supersedes": { "type": ["string", "null"] },
+    "revocation_ref": { "type": ["string", "null"] },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "grants_authority": { "const": false }
+  }
+}
