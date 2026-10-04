@@ -1,0 +1,107 @@
+{
+  "_comment": "TEST FIXTURE. Signatures are HMAC-SHA256 with the public test key in generate_signed_proof_set.py. Evidence only; grants no authority.",
+  "verifier_ref": "verifier:aquaduct:test-fixture",
+  "test_fixture_key_utf8": "TEST-FIXTURE-KEY-NOT-A-SECRET-DO-NOT-USE-IN-PRODUCTION",
+  "proofs": [
+    {
+      "envelope": {
+        "proof_id": "proof:example:0001",
+        "proof_class": "ProofOfCapability",
+        "agent_entity_ref": "agententity:example:atlas-0001",
+        "intent_ref": "intent:example:0001",
+        "mandate_ref": "mandate:example:0001",
+        "execution_envelope_ref": "envelope:example:0001",
+        "evidence_refs": [
+          "aquaduct:receipt:arc-testnet-5042002:0001"
+        ],
+        "verifier_ref": "verifier:aquaduct:test-fixture",
+        "policy_version_ref": "aegis:policy:v1",
+        "security_attestation_ref": "54t:attestation:0001",
+        "created_at": "2026-09-18T00:00:00Z",
+        "status": "VERIFIED",
+        "grants_authority": false
+      },
+      "signature": "e31da8a847b771669feceb15a29b8c8f5034c81ee48d68def47780cd5bea4f13"
+    },
+    {
+      "envelope": {
+        "proof_id": "proof:example:0002",
+        "proof_class": "ProofOfQuote",
+        "agent_entity_ref": "agententity:example:atlas-0001",
+        "intent_ref": "intent:example:0001",
+        "mandate_ref": "mandate:example:0001",
+        "execution_envelope_ref": "envelope:example:0001",
+        "evidence_refs": [
+          "aquaduct:receipt:arc-testnet-5042002:0002"
+        ],
+        "verifier_ref": "verifier:aquaduct:test-fixture",
+        "policy_version_ref": "aegis:policy:v1",
+        "security_attestation_ref": "54t:attestation:0002",
+        "created_at": "2026-09-18T00:00:00Z",
+        "status": "VERIFIED",
+        "grants_authority": false
+      },
+      "signature": "f696fb8a9eeef8c84aa6c0b03a28395348e1cd34446a7f6abf1abd5659e697fc"
+    },
+    {
+      "envelope": {
+        "proof_id": "proof:example:0003",
+        "proof_class": "ProofOfExecution",
+        "agent_entity_ref": "agententity:example:atlas-0001",
+        "intent_ref": "intent:example:0001",
+        "mandate_ref": "mandate:example:0001",
+        "execution_envelope_ref": "envelope:example:0001",
+        "evidence_refs": [
+          "aquaduct:receipt:arc-testnet-5042002:0003"
+        ],
+        "verifier_ref": "verifier:aquaduct:test-fixture",
+        "policy_version_ref": "aegis:policy:v1",
+        "security_attestation_ref": "54t:attestation:0003",
+        "created_at": "2026-09-18T00:00:00Z",
+        "status": "VERIFIED",
+        "grants_authority": false
+      },
+      "signature": "3e8cef28b995852078b1a5ce17abfd3120e5badd1588f7bfb59fc493ffdf44c9"
+    },
+    {
+      "envelope": {
+        "proof_id": "proof:example:0004",
+        "proof_class": "ProofOfSettlement",
+        "agent_entity_ref": "agententity:example:atlas-0001",
+        "intent_ref": "intent:example:0001",
+        "mandate_ref": "mandate:example:0001",
+        "execution_envelope_ref": "envelope:example:0001",
+        "evidence_refs": [
+          "aquaduct:receipt:arc-testnet-5042002:0004"
+        ],
+        "verifier_ref": "verifier:aquaduct:test-fixture",
+        "policy_version_ref": "aegis:policy:v1",
+        "security_attestation_ref": "54t:attestation:0004",
+        "created_at": "2026-09-18T00:00:00Z",
+        "status": "VERIFIED",
+        "grants_authority": false
+      },
+      "signature": "a0a3f8df2f72164bf4183ac8088d4343d720289b9587ae2385b9afa05d854df0"
+    },
+    {
+      "envelope": {
+        "proof_id": "proof:example:0005",
+        "proof_class": "ProofOfFiscalDiscipline",
+        "agent_entity_ref": "agententity:example:atlas-0001",
+        "intent_ref": "intent:example:0001",
+        "mandate_ref": "mandate:example:0001",
+        "execution_envelope_ref": "envelope:example:0001",
+        "evidence_refs": [
+          "aquaduct:receipt:arc-testnet-5042002:0005"
+        ],
+        "verifier_ref": "verifier:aquaduct:test-fixture",
+        "policy_version_ref": "aegis:policy:v1",
+        "security_attestation_ref": "54t:attestation:0005",
+        "created_at": "2026-09-18T00:00:00Z",
+        "status": "VERIFIED",
+        "grants_authority": false
+      },
+      "signature": "523253ffff8e7891b2d818a6a8b23377a7de2d6da367bff1ce1d7c57b287b695"
+    }
+  ]
+}
