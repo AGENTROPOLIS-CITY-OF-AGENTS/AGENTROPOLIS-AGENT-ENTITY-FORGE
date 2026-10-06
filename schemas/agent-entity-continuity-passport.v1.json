@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agentropolis.dev/schemas/agent-entity-continuity-passport.v1.json",
+  "title": "AGENTROPOLIS AGENT-ENTITY Continuity Passport v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "passport_id",
+    "agent_entity_id",
+    "agent_did",
+    "controller_ref",
+    "status",
+    "runtime_bindings",
+    "proof_refs",
+    "issued_at",
+    "updated_at"
+  ],
+  "properties": {
+    "passport_id": {"type": "string", "minLength": 1},
+    "agent_entity_id": {"type": "string", "minLength": 1},
+    "agent_did": {"type": "string", "minLength": 1},
+    "controller_ref": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["active", "restricted", "suspended", "revoked", "recovery"]},
+    "proof_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "memory_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "reputation_view_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "runtime_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["runtime_binding_id", "runtime_id", "credential_ref", "state", "issued_at"],
+        "properties": {
+          "runtime_binding_id": {"type": "string", "minLength": 1},
+          "runtime_id": {"type": "string", "minLength": 1},
+          "harness_profile_id": {"type": ["string", "null"]},
+          "credential_ref": {"type": "string", "minLength": 1},
+          "dock_session_ref": {"type": ["string", "null"]},
+          "capability_policy_ref": {"type": ["string", "null"]},
+          "state": {"type": "string", "enum": ["active", "suspended", "revoked", "expired"]},
+          "issued_at": {"type": "string", "format": "date-time"},
+          "expires_at": {"type": ["string", "null"], "format": "date-time"}
+        }
+      }
+    },
+    "proof_graph_head": {"type": ["string", "null"]},
+    "issued_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"}
+  }
+}
